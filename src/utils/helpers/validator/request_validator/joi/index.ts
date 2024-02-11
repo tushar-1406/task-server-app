@@ -1,2 +1,2 @@
-import AuthInputSchemas from './auth'
+import AuthInputSchemas from './auth.js'
 export { AuthInputSchemas }

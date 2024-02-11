@@ -1,5 +1,5 @@
-import DB from '@src/db/index'
-import { UserData } from '@src/types/db/db'
+import DB from '../db/index.js'
+import { UserData } from '../types/db/db.js'
 
 class DBService {
   private static db: any
@@ -23,6 +23,7 @@ class DBService {
 
     return userExists
   }
+
   // get user
   public static async getUser(email: string, phone: string): Promise<UserData> {
     await DBService.ensureInitialized()

@@ -1,8 +1,8 @@
-import 'module-alias/register'
-import app from './app'
-import Locals from '@src/config/index'
-import Logger from '@src/providers/logger/'
-import Database from '@src/db'
+// import 'module-alias/register.js'
+import app from './app.js'
+import Locals from './config/index.js'
+import Logger from './providers/logger/index.js'
+import Database from './db/index.js'
 
 const port: number = Locals.config().PORT
 Database.init()

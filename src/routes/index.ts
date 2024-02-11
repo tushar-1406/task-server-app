@@ -1,7 +1,7 @@
 import { Router } from 'express'
-import { ValidateAuthInputs } from '@src/middleware/request_validation'
-import { AuthController } from '@src/controllers'
-import { IRequest, IResponse } from '@src/types/vendor'
+import { ValidateAuthInputs } from '../middleware/request_validation/index.js'
+import { AuthController } from '../controllers/index.js'
+import { IRequest, IResponse } from '../types/vendor/index.js'
 const router = Router()
 router.get('/', (_req: IRequest, res: IResponse) => {
   res.send('Hello, This is Auth Service!')

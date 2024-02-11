@@ -9,9 +9,6 @@
     "noEmit": false,
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "allowImportingTsExtensions": true,
-    "emitDeclarationOnly": true,
-    "declaration": true,
     "experimentalDecorators": true,
     "noImplicitAny": false,
     "noImplicitReturns": true,
@@ -22,15 +19,10 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "removeComments": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "rootDir": ".",
     "paths": {
       "@src/*": ["src/*"]
-    },
-    "emitDecoratorMetadata": true
+    }
   },
-  "include": ["src/**/*.ts"],
+  "include": ["**/*.ts"],
   "exclude": ["node_modules"]
 }

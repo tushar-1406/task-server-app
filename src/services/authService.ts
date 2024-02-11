@@ -1,14 +1,14 @@
 import { randomUUID } from 'crypto'
-import { ISignInData, ISignUpData } from '@src/types/request/requestSchema'
-import { StatusCodeConstants, ResponseConstants } from '@src/utils/constants'
-import { InternalResponse } from '@src/types/response/response'
-import { PersonalInfo, AddressInfo, IdentificationInfo, UserData } from '@src/types/db/db'
+import { ISignInData, ISignUpData } from '../types/request/requestSchema.js'
+import { StatusCodeConstants, ResponseConstants } from '../utils/constants/index.js'
+import { InternalResponse } from '../types/response/response.js'
+import { PersonalInfo, AddressInfo, IdentificationInfo, UserData } from '../types/db/db.js'
 import createHttpError from 'http-errors'
-import Hashing from '@src/utils/helpers/authentication/hashing/hashing'
-import DBService from './dbService'
-import JWT from '@src/utils/helpers/authentication/jwt/jwt'
-import { UserRole } from '@src/types/jwt/jwt'
-import { LoginResponse } from '@src/types/response/authentication'
+import Hashing from '../utils/helpers/authentication/hashing/hashing.js'
+import DBService from './dbService.js'
+import JWT from '../utils/helpers/authentication/jwt/jwt.js'
+import { UserRole } from '../types/jwt/jwt.js'
+import { LoginResponse } from '../types/response/authentication.js'
 const response = {
   statusCode: StatusCodeConstants.OK,
   message: ResponseConstants.SUCCESS,
@@ -23,6 +23,7 @@ class AuthService {
     if (exists) {
       throw new createHttpError.BadRequest(ResponseConstants.USER_ALREADY_EXISTS)
     }
+
     const hashedPassword: string = await Hashing.hashPassword(signUpParameters.password)
     const userId = randomUUID()
     // Create user data objects
@@ -61,18 +62,22 @@ class AuthService {
     response.data = {}
     return response
   }
+
   public static signIn = async (signInParameters: ISignInData): Promise<InternalResponse> => {
     // check if user with same email or mobile exists
     const exists: boolean = await DBService.findUser(signInParameters.email, '')
     if (!exists) {
       throw new createHttpError.Unauthorized(ResponseConstants.USER_NOT_EXISTS)
     }
-    //get user details
+
+    // get user details
+
     const user: UserData = await DBService.getUser(signInParameters.email, '')
     const isCorrect: boolean = await Hashing.comparePassword(user.personalInfo.password, signInParameters.password)
     if (!isCorrect) {
       throw new createHttpError.Unauthorized(ResponseConstants.INVALID_PASSWORD)
     }
+
     const jwtPayload = {
       email: user.personalInfo.email,
       userId: user.personalInfo.id,

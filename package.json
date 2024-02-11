@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "This is a boilerplate Node.js Express application showcasing basic usage of routes, database setup, and linting.",
   "main": "./dist/src/server.js",
-  "types": "module",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "lint": "eslint --ext .ts && npm run format",
     "format": "prettier --write \"**/*.{json,md,ts,tsx}\"",
-    "dev": "tsx watch -r tsconfig-paths/register ./src/server.ts",
+    "dev": "tsx watch ./src/server.ts",
     "build": "tsc",
-    "start": "TS_NODE_BASEURL=./dist node -r tsconfig-paths/register ./dist/src/server.js",
+    "start": "TS_NODE_BASEURL=./dist node ./dist/src/server.js",
     "prod": "npm run lint && npm run build && npm run start"
   },
   "author": "Tushar Popli",

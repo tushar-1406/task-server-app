@@ -1,4 +1,4 @@
-import { StatusCodeConstants } from '@src/utils/constants'
+import { StatusCodeConstants } from '../../../utils/constants/index.js'
 class ApiResponse<T> {
   statusCode: number
   success: boolean

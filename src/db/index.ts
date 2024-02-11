@@ -1,4 +1,4 @@
-import Logger from '@src/providers/logger'
+import Logger from '../providers/logger/index.js'
 import { JSONFilePreset } from 'lowdb/node'
 
 class Database {

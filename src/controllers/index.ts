@@ -1,2 +1,2 @@
-import AuthController from './authController'
+import AuthController from './authController.js'
 export { AuthController }

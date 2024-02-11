@@ -1,9 +1,0 @@
-{
-  "jwt": {
-    "algorithm": "RS256",
-    "access_token_expiration_in_ms": 43200000,
-    "refresh_token_expiration_in_ms": 604800000,
-    "issuer": "Task Server App",
-    "audience": "Task Server App"
-  }
-}

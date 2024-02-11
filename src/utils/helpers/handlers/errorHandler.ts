@@ -1,7 +1,7 @@
 import createHttpError from 'http-errors'
-import { IRequest, IResponse, INext } from '@src/types/vendor'
-import Logger from '@src/providers/logger'
-import { ErrorConstants, StatusCodeConstants } from '@src/utils/constants'
+import { IRequest, IResponse, INext } from '../../../types/vendor/index.js'
+import Logger from '../../../providers/logger/index.js'
+import { ErrorConstants, StatusCodeConstants } from '../../../utils/constants/index.js'
 
 const errorHandler = (err: Error, _req: IRequest, res: IResponse, _next: INext) => {
   // TODO : comment for production

@@ -1,4 +1,4 @@
-import { IRequest, INext } from '@src/types/vendor/index'
+import { IRequest, INext } from '../../../../types/vendor/index.js'
 import createHttpError from 'http-errors'
 
 export const requestValidator = (_req: IRequest, next: INext, schema: any, dataToValidate: any) => {

@@ -1,5 +1,5 @@
-import { IRequest, IResponse } from '@src/types/vendor'
-import { StatusCodeConstants, ErrorConstants } from '@src/utils/constants'
+import { IRequest, IResponse } from '../../../types/vendor/index.js'
+import { StatusCodeConstants, ErrorConstants } from '../../../utils/constants/index.js'
 
 const notFoundHandler = (_req: IRequest, res: IResponse) => {
   return res.status(StatusCodeConstants.OK).json({

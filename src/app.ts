@@ -1,7 +1,7 @@
 import express, { Application } from 'express'
-import morganMiddleware from '@src/providers/morgan/index'
-import { notFoundHandler, errorHandler } from '@src/utils/helpers/handlers'
-import router from '@src/routes'
+import morganMiddleware from './providers/morgan/index.js'
+import { notFoundHandler, errorHandler } from './utils/helpers/handlers/index.js'
+import router from './routes/index.js'
 const app: Application = express()
 app.use(
   express.json({

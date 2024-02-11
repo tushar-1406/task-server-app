@@ -6,9 +6,7 @@ export default class AuthInputSchemas {
       .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
       .required(),
     password: Joi.string()
-      .pattern(
-        new RegExp('^(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>])(?=.*[a-zA-Z])[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]{6,12}$'),
-      )
+      .pattern(/^(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>])(?=.*[a-zA-Z])[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]{6,12}$/)
       .required(),
     confirmPassword: Joi.ref('password'), // Confirm password must match password
     firstName: Joi.string().min(2).max(20).required(),
@@ -19,13 +17,21 @@ export default class AuthInputSchemas {
     country: Joi.string().required(),
     state: Joi.string().required(),
     city: Joi.string().required(),
-    zipCode: Joi.string().pattern(new RegExp('^[0-9]{5}$')).required(),
-    phone: Joi.string()
-      .pattern(new RegExp(/^\+\d{1,3}\d{6,14}$/))
+    zipCode: Joi.string()
+      .pattern(/^[0-9]{5}$/)
       .required(),
-    sinNumber: Joi.string().pattern(new RegExp('^[0-9]{9}$')).required(),
-    passportNumber: Joi.string().pattern(new RegExp('^([A-Z0-9]){9}$')).allow(''),
-    driverLicenseNumber: Joi.string().pattern(new RegExp('^([A-Z0-9]){9}$')).allow(''),
+    phone: Joi.string()
+      .pattern(/^\+\d{1,3}\d{6,14}$/)
+      .required(),
+    sinNumber: Joi.string()
+      .pattern(/^[0-9]{9}$/)
+      .required(),
+    passportNumber: Joi.string()
+      .pattern(/^([A-Z0-9]){9}$/)
+      .allow(''),
+    driverLicenseNumber: Joi.string()
+      .pattern(/^([A-Z0-9]){9}$/)
+      .allow(''),
   }).or('passportNumber', 'driverLicenseNumber')
 
   static signInSchema = Joi.object({
