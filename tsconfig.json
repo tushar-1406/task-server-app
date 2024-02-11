@@ -1,14 +1,17 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "pretty": true,
     "target": "ES2021",
     "outDir": "./dist",
-    "baseUrl": "./lib",
+    "baseUrl": ".",
     "noEmit": false,
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
+    "declaration": true,
     "experimentalDecorators": true,
     "noImplicitAny": false,
     "noImplicitReturns": true,
@@ -18,8 +21,16 @@
     "lib": ["ES2021"],
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "removeComments": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "rootDir": ".",
+    "paths": {
+      "@src/*": ["src/*"]
+    },
+    "emitDecoratorMetadata": true
   },
-  "include": ["*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }
