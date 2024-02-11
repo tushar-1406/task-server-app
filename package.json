@@ -26,6 +26,7 @@
     "lowdb": "^7.0.1",
     "module-alias": "^2.2.3",
     "morgan": "^1.10.0",
+    "supertest": "^6.3.4",
     "tsx": "^4.7.1",
     "uuid": "^9.0.1",
     "winston": "^3.11.0"

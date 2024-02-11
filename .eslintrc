@@ -15,7 +15,8 @@
     "plugin:import/warnings",
     "plugin:import/typescript",
   ],
-  "ignorePatterns": ["/lib/**/*"],
+  "ignorePatterns": ["/lib/**/*", "babel.config.cjs"],
+
   "plugins": ["@typescript-eslint", "unused-imports", "prettier", "import"],
   "parserOptions": {
     "ecmaFeatures": {
