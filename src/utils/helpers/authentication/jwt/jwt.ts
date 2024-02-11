@@ -14,7 +14,7 @@ export default class TokenHandler {
    * @param payload contains: id, email, role
    * @returns object: {status: true/false, data: token/err}
    */
-  static generateAccessToken(payload: JwtPayload) {
+  static generateAccessToken(payload: JwtPayload): string {
     const privateKey = Locals.JWT().JWT_PRIVATE_KEY
 
     const JwtOptions: SignOptions = {
@@ -32,7 +32,7 @@ export default class TokenHandler {
       privateKey,
       JwtOptions,
     )
-    return { status: true, data: JWT_TOKEN }
+    return JWT_TOKEN
   }
 
   /**
@@ -40,16 +40,15 @@ export default class TokenHandler {
    * @param token : string
    * @returns object: {status: true/false, data: parsed-data/err}
    */
-  static verifyAccessToken(token: string) {
-    const publicKey = Locals.JWT().JWT_PUBLIC_KEY
-    const verify = JWT.verify(token, publicKey, {
-      algorithms: [this.JWT_ALGORITHM],
-    })
-    return { status: true, data: verify }
-  }
+  // static verifyAccessToken(token: string) {
+  //   const publicKey = Locals.JWT().JWT_PUBLIC_KEY
+  //   const verify = JWT.verify(token, publicKey, {
+  //     algorithms: [this.JWT_ALGORITHM],
+  //   })
+  //   return { status: true, data: verify }
+  // }
 
-  static async generateRefreshToken(payload: JwtPayload) {
-    // try {
+  static generateRefreshToken(payload: JwtPayload): string {
     const privateKey = Locals.JWT().JWT_REFRESH_PRIVATE_KEY
 
     const JwtOptions: SignOptions = {
@@ -66,7 +65,7 @@ export default class TokenHandler {
       privateKey,
       JwtOptions,
     )
-    return { status: true, data: refreshToken }
+    return refreshToken
   }
 
   static async verifyRefreshToken(refreshToken: string) {

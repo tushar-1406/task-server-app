@@ -18,7 +18,6 @@ class AuthController {
     /** Retrieve the signIn parameters from the request body  **/
     const signInParameters: ISignInData = req.body
     const response: InternalResponse = await AuthService.signIn(signInParameters)
-    console.log(signInParameters)
     return res
       .status(response.statusCode)
       .json(new ApiResponse(StatusCodeConstants.OK, response.data, response.message))

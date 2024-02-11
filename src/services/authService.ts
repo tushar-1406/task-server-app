@@ -6,6 +6,9 @@ import { PersonalInfo, AddressInfo, IdentificationInfo, UserData } from '@src/ty
 import createHttpError from 'http-errors'
 import Hashing from '@src/utils/helpers/authentication/hashing/hashing'
 import DBService from './dbService'
+import JWT from '@src/utils/helpers/authentication/jwt/jwt'
+import { UserRole } from '@src/types/jwt/jwt'
+import { LoginResponse } from '@src/types/response/authentication'
 const response = {
   statusCode: StatusCodeConstants.OK,
   message: ResponseConstants.SUCCESS,
@@ -58,8 +61,34 @@ class AuthService {
     response.data = {}
     return response
   }
-  public static signIn = async (signIpParameters: ISignInData): Promise<InternalResponse> => {
-    console.log(signIpParameters)
+  public static signIn = async (signInParameters: ISignInData): Promise<InternalResponse> => {
+    // check if user with same email or mobile exists
+    const exists: boolean = await DBService.findUser(signInParameters.email, '')
+    if (!exists) {
+      throw new createHttpError.Unauthorized(ResponseConstants.USER_NOT_EXISTS)
+    }
+    //get user details
+    const user: UserData = await DBService.getUser(signInParameters.email, '')
+    const isCorrect: boolean = await Hashing.comparePassword(user.personalInfo.password, signInParameters.password)
+    if (!isCorrect) {
+      throw new createHttpError.Unauthorized(ResponseConstants.INVALID_PASSWORD)
+    }
+    const jwtPayload = {
+      email: user.personalInfo.email,
+      userId: user.personalInfo.id,
+      role: UserRole.USER,
+      phone: user.personalInfo.phone,
+    }
+    const accessToken = JWT.generateAccessToken(jwtPayload)
+    const refreshToken = JWT.generateRefreshToken(jwtPayload)
+    const response = {
+      statusCode: StatusCodeConstants.OK,
+      message: ResponseConstants.LOGIN_SUCCESS,
+      data: {
+        accessToken,
+        refreshToken,
+      } as LoginResponse,
+    }
     return response
   }
 }

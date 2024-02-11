@@ -14,6 +14,7 @@ class DBService {
     DBService.db = await DB.init()
   }
 
+  // find user
   public static async findUser(email: string, phone: string): Promise<boolean> {
     await DBService.ensureInitialized()
     const userExists = await DBService.db.data.users.some(
@@ -21,6 +22,15 @@ class DBService {
     )
 
     return userExists
+  }
+  // get user
+  public static async getUser(email: string, phone: string): Promise<UserData> {
+    await DBService.ensureInitialized()
+    const user = await DBService.db.data.users.find(
+      (user: any) => user.personalInfo.email === email || user.personalInfo.phone === phone,
+    )
+
+    return user
   }
 
   // Method to sign up a new user in db
