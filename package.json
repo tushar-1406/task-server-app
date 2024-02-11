@@ -1,7 +1,7 @@
 {
   "name": "nodejs-auth-server",
   "version": "1.0.0",
-  "description": "This is a boilerplate Node.js Express application showcasing basic usage of routes, database setup, and linting.",
+  "description": "This is a Node.js Express application showcasing production level usage of routes, database setup, and linting, authentication.",
   "main": "./dist/src/server.js",
   "type": "module",
   "scripts": {
@@ -10,8 +10,8 @@
     "format": "prettier --write \"**/*.{json,md,ts,tsx}\"",
     "dev": "tsx watch ./src/server.ts",
     "build": "tsc",
-    "start": "TS_NODE_BASEURL=./dist node ./dist/src/server.js",
-    "prod": "npm run lint && npm run build && npm run start"
+    "dist": "TS_NODE_BASEURL=./dist node ./dist/src/server.js",
+    "start": "npm run lint && npm run build && npm run dist"
   },
   "author": "Tushar Popli",
   "license": "ISC",
