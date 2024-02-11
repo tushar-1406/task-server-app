@@ -1,0 +1,148 @@
+{
+  "users": [
+    {
+      "personalInfo": {
+        "id": "38b9843e-8a7e-41d1-8917-4e84bb56d8b3",
+        "email": "example@example.com",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$cmsxcXF3RlN5T2hXS2gzZ0JZOA$o4Y/AhiQYEhfb95cIMm8k4KoVm5ASrgUyGdAejK1930",
+        "phone": "+1234567890",
+        "firstName": "John",
+        "lastName": "Doe",
+        "dob": "1990-01-01"
+      },
+      "addressInfo": {
+        "streetAddress": "123 Main St",
+        "optionalAddress": "Apt 101",
+        "country": "United States",
+        "state": "California",
+        "city": "Los Angeles",
+        "zipCode": "90001"
+      },
+      "identificationInfo": {
+        "sinNumber": "123456789",
+        "passportNumber": "AB1234567",
+        "driverLicenseNumber": "AB9876543"
+      }
+    },
+    {
+      "personalInfo": {
+        "id": "2a08ae91-31dc-4487-9545-65cde1b3b955",
+        "email": "example@example.com",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$cmsxcXF3RlN5T2hXS2gzZ0JZOA$o4Y/AhiQYEhfb95cIMm8k4KoVm5ASrgUyGdAejK1930",
+        "phone": "+1234567890",
+        "firstName": "John",
+        "lastName": "Doe",
+        "dob": "1990-01-01"
+      },
+      "addressInfo": {
+        "streetAddress": "123 Main St",
+        "optionalAddress": "Apt 101",
+        "country": "United States",
+        "state": "California",
+        "city": "Los Angeles",
+        "zipCode": "90001"
+      },
+      "identificationInfo": {
+        "sinNumber": "123456789",
+        "passportNumber": "AB1234567",
+        "driverLicenseNumber": "AB9876543"
+      }
+    },
+    {
+      "personalInfo": {
+        "id": "00e7906f-b042-4ecc-acd3-3df4b21e0f13",
+        "email": "example1@example.com",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$cmsxcXF3RlN5T2hXS2gzZ0JZOA$o4Y/AhiQYEhfb95cIMm8k4KoVm5ASrgUyGdAejK1930",
+        "phone": "+1234567891",
+        "firstName": "John",
+        "lastName": "Doe",
+        "dob": "1990-01-01"
+      },
+      "addressInfo": {
+        "streetAddress": "123 Main St",
+        "optionalAddress": "Apt 101",
+        "country": "United States",
+        "state": "California",
+        "city": "Los Angeles",
+        "zipCode": "90001"
+      },
+      "identificationInfo": {
+        "sinNumber": "123456789",
+        "passportNumber": "AB1234567",
+        "driverLicenseNumber": "AB9876543"
+      }
+    },
+    {
+      "personalInfo": {
+        "id": "34bf50f7-0b3e-413b-8707-21237a60c742",
+        "email": "example2@example.com",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$cmsxcXF3RlN5T2hXS2gzZ0JZOA$o4Y/AhiQYEhfb95cIMm8k4KoVm5ASrgUyGdAejK1930",
+        "phone": "+1234567892",
+        "firstName": "John",
+        "lastName": "Doe",
+        "dob": "1990-01-01"
+      },
+      "addressInfo": {
+        "streetAddress": "123 Main St",
+        "optionalAddress": "Apt 101",
+        "country": "United States",
+        "state": "California",
+        "city": "Los Angeles",
+        "zipCode": "90001"
+      },
+      "identificationInfo": {
+        "sinNumber": "123456789",
+        "passportNumber": "AB1234567",
+        "driverLicenseNumber": "AB9876543"
+      }
+    },
+    {
+      "personalInfo": {
+        "id": "6c1c4ea6-e823-474a-9535-aa3f5b0af4a5",
+        "email": "example3@example.com",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$cmsxcXF3RlN5T2hXS2gzZ0JZOA$o4Y/AhiQYEhfb95cIMm8k4KoVm5ASrgUyGdAejK1930",
+        "phone": "+1234567893",
+        "firstName": "John",
+        "lastName": "Doe",
+        "dob": "1990-01-01"
+      },
+      "addressInfo": {
+        "streetAddress": "123 Main St",
+        "optionalAddress": "Apt 101",
+        "country": "United States",
+        "state": "California",
+        "city": "Los Angeles",
+        "zipCode": "90001"
+      },
+      "identificationInfo": {
+        "sinNumber": "123456789",
+        "passportNumber": "AB1234567",
+        "driverLicenseNumber": "AB9876543"
+      }
+    },
+    {
+      "personalInfo": {
+        "id": "5c741d4d-ee99-4d99-99e0-d3393a75e763",
+        "email": "example4@example.com",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$cmsxcXF3RlN5T2hXS2gzZ0JZOA$o4Y/AhiQYEhfb95cIMm8k4KoVm5ASrgUyGdAejK1930",
+        "phone": "+1234567894",
+        "firstName": "John",
+        "lastName": "Doe",
+        "dob": "1990-01-01"
+      },
+      "addressInfo": {
+        "streetAddress": "123 Main St",
+        "optionalAddress": "Apt 101",
+        "country": "United States",
+        "state": "California",
+        "city": "Los Angeles",
+        "zipCode": "90001"
+      },
+      "identificationInfo": {
+        "sinNumber": "123456789",
+        "passportNumber": "AB1234567",
+        "driverLicenseNumber": "AB9876543"
+      }
+    }
+  ]
+}

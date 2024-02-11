@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "pretty": true,
     "target": "ES2021",
     "outDir": "./dist",
-    "baseUrl": "./lib",
+    "baseUrl": ".",
     "noEmit": false,
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
@@ -18,8 +18,11 @@
     "lib": ["ES2021"],
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "paths": {
+      "@src/*": ["src/*"]
+    }
   },
-  "include": ["*.ts"],
+  "include": ["**/*.ts"],
   "exclude": ["node_modules"]
 }
